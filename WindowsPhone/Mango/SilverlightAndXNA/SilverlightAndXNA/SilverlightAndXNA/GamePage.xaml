@@ -1,0 +1,38 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="SilverlightAndXNA.GamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <!-- Toggles the visibility of the ColorPanel-->
+        <Button Grid.Row="0" x:Name="ColorPanelToggleButton" Click="ColorPanelToggleButton_Click" Margin="1,0,-1,0">Toggle Color Panel</Button>
+        
+        <!-- Arrange buttons in a horizontal line by using StackPanel -->
+        <StackPanel x:Name="ColorPanel" Grid.Row="2" Height="100" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="Visible">
+            <!-- Buttons to set the rectangle to specific colors -->
+            <Button Click="redButton_Click" HorizontalAlignment="Center" Height="75" VerticalAlignment="Center" BorderThickness="3" Background="Firebrick" Width="75" />
+            <Button Click="greenButton_Click" HorizontalAlignment="Center" Height="75" VerticalAlignment="Center" BorderThickness="3" Background="Lime" Width="75" />
+            <Button Click="blueButton_Click" HorizontalAlignment="Center" Height="75" VerticalAlignment="Center" BorderThickness="3" Background="Blue" Width="75" />
+        </StackPanel>
+
+
+    </Grid>
+    
+</phone:PhoneApplicationPage>
